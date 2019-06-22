@@ -1,0 +1,16 @@
+    
+const mongoose = require('mongoose');
+const dbURL = require('./properties').DB;
+
+module.exports = () => {
+  mongoose.connect(dbURL, { useNewUrlParser: true })
+    .then(() => console.log(`Mongo puerto ${dbURL}`))
+    .catch(err => console.log(`erro de conección ${err}`))
+
+  process.on('SIGINT', () => {
+    mongoose.connection.close(() => {
+      console.log(`Mongo deconectado`);
+      process.exit(0)
+    });
+  });
+}
