@@ -8,6 +8,7 @@ const propierties = require('./config/properties');
 const router = express.Router();
 const DB = require('./config/db');
 //se inicia la bd
+
 DB();
 const bodyParser = require('body-parser');
 const bodyParserJSON = bodyParser.json();
@@ -17,4 +18,10 @@ app.use(bodyParserJSON);
 app.use(bodyParserURLEncoded);
 app.use(cors());
 
-app.listen(3000, ()=>console.log('server running'));
+app.use('/api', router);
+
+authRoutes(router);
+
+app.use(router);
+
+app.listen(propierties.PORT, () => console.log(`Server runing on port ${propierties.PORT}`));
