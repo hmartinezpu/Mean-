@@ -61,3 +61,27 @@ exports.createUser = (req, res, next) => {
       }
     });
   }
+
+
+
+
+  exports.todosGet = (req, res, next) => {
+    
+    User.find({  }, (err, users) => {
+      if (err) return res.status(500).send('Server error!');
+  
+      if (!users) {
+        // email does not exist
+        res.status(409).send({ message: 'Something is wrong' });
+      } 
+
+         
+          res.status(200).send({ users });
+       
+      
+    });
+  }
+
+  
+
+

@@ -4,7 +4,8 @@
   "description": "Actualizacion",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "test": "NODE_ENV=test nodemon --exec 'mocha --R min'"
   },
   "author": "Jorge Martinez",
   "license": "ISC",
@@ -14,6 +15,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.4.13"
+    "mocha": "^6.1.4",
+    "mongoose": "^5.4.13",
+    "supertest": "^4.0.2"
   }
 }
