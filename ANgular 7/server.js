@@ -7,8 +7,9 @@ const propierties = require('./config/properties');
 
 const router = express.Router();
 const DB = require('./config/db');
+const Sql = require('./config/mysqlCon');
 //se inicia la bd
-
+Sql();
 DB();
 const bodyParser = require('body-parser');
 const bodyParserJSON = bodyParser.json();

@@ -5,7 +5,7 @@ const dbURL = require('./properties').DB;
 module.exports = () => {
   mongoose.connect(dbURL, { useNewUrlParser: true })
     .then(() => console.log(`Mongo puerto ${dbURL}`))
-    .catch(err => console.log(`erro de conección ${err}`))
+    .catch(err => console.log(`error de conección ${err}`))
 
   process.on('SIGINT', () => {
     mongoose.connection.close(() => {

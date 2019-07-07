@@ -1,5 +1,5 @@
     
-const User = require('./authdao');
+const User = require('../auth/authdao');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const SECRET_KEY = 'secretkey123456';

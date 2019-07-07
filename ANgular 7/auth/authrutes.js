@@ -1,4 +1,4 @@
-const Users = require ('./authcontroller');
+const Users = require ('../Controladores/authcontroller');
 var express = require('express');
 
 module.exports = (router)=>{
